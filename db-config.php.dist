@@ -1,0 +1,10 @@
+<?php
+
+return array(
+    'database' => array(
+        'driver'   => 'pdo_sqlite',
+        'user'     => 'root',
+        'password' => '',
+        'memory' => true
+    )
+);

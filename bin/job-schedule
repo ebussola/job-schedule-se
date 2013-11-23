@@ -1,0 +1,25 @@
+#!/bin/env php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Leonardo
+ * Date: 23/11/13
+ * Time: 11:39
+ */
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$config = include(__DIR__ . '/../db-config.php');
+$db = \Doctrine\DBAL\DriverManager::getConnection($config['database']);
+
+$helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
+    'db' => new \Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($db)
+));
+
+$cli = new \Symfony\Component\Console\Application();
+$cli->setHelperSet($helperSet);
+$cli->addCommands(array(
+    new \ebussola\job\console\InitCommand()
+));
+
+$cli->run();
