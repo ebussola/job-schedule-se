@@ -63,7 +63,7 @@ class SymfonyProcess implements \ebussola\job\JobRunner {
     public function isRunning(\ebussola\job\Job $job) {
         $this->refreshJobs($job);
 
-        return (isset($job->process) && $job->process->isRunning());
+        return ($this->inArray($job, $this->running));
     }
 
     /**
@@ -74,18 +74,18 @@ class SymfonyProcess implements \ebussola\job\JobRunner {
     public function isWaiting(\ebussola\job\Job $job) {
         $this->refreshJobs($job);
 
-        return in_array($job, $this->waiting);
+        return $this->inArray($job, $this->waiting);
     }
 
     /**
      * @param \ebussola\job\jobrunner\symfonyprocess\Job $job
      */
     private function refreshJobs(\ebussola\job\Job $job) {
-        if (in_array($job, $this->running)) {
-            $key = array_search($job, $this->running);
-            /** @var Process $process */
-            $process = $job->process;
-            if ($process->isTerminated()) {
+        if ($this->inArray($job, $this->running)) {
+            $key = $this->arraySearch($job, $this->running);
+            $job = $this->running[$key];
+
+            if ($job->process->isTerminated()) {
                 unset($this->running[$key]);
                 $job->status_code = 0;
 
@@ -100,6 +100,26 @@ class SymfonyProcess implements \ebussola\job\JobRunner {
                 }
             }
         }
+    }
+
+    private function inArray($job, $running) {
+        foreach ($running as $job_running) {
+            if ($job->id == $job_running->id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function arraySearch($job, $running) {
+        foreach ($running as $key => $job_running) {
+            if ($job->id == $job_running->id) {
+                return $key;
+            }
+        }
+
+        return false;
     }
 
 }
