@@ -16,7 +16,8 @@
     "require": {
         "ebussola/job-schedule": "1.0.0",
         "doctrine/dbal": "v2.4.1",
-        "symfony/console": "v2.3.7"
+        "symfony/console": "v2.3.7",
+        "symfony/process": "v2.3.7"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"
