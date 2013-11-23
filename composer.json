@@ -1,0 +1,24 @@
+{
+    "name": "ebussola/job-schedule-se",
+    "description": "Job Schedule Standard Edition",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Leonardo Shinagawa",
+            "email": "leonardo@ebussola.com"
+        }
+    ],
+    "autoload" : {
+        "psr-0" : {
+            "ebussola\\job" : "src/"
+        }
+    },
+    "require": {
+        "ebussola/job-schedule": "1.0.0",
+        "doctrine/dbal": "v2.4.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.28",
+        "symfony/console": "v2.3.7"
+    }
+}
