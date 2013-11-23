@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "894f0b0ac07b84eec080129be372d599",
+    "hash": "694d4c58b48f61164b3bd14e7c6e7c08",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -508,16 +508,16 @@
         },
         {
             "name": "ebussola/job-schedule",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/job-schedule.git",
-                "reference": "e96ebbe4882eefed4bd747070c773ee90f930bf5"
+                "reference": "bb143d6abd08da88e18b3cc317af6d191bb8781e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/job-schedule/zipball/e96ebbe4882eefed4bd747070c773ee90f930bf5",
-                "reference": "e96ebbe4882eefed4bd747070c773ee90f930bf5",
+                "url": "https://api.github.com/repos/ebussola/job-schedule/zipball/bb143d6abd08da88e18b3cc317af6d191bb8781e",
+                "reference": "bb143d6abd08da88e18b3cc317af6d191bb8781e",
                 "shasum": ""
             },
             "require": {
@@ -542,7 +542,7 @@
                 }
             ],
             "description": "A daemon job schedule",
-            "time": "2013-11-23 21:02:54"
+            "time": "2013-11-23 21:23:49"
         },
         {
             "name": "monolog/monolog",
