@@ -19,7 +19,8 @@ $helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
 $cli = new \Symfony\Component\Console\Application();
 $cli->setHelperSet($helperSet);
 $cli->addCommands(array(
-    new \ebussola\job\console\InitCommand()
+    new \ebussola\job\console\InitCommand(),
+    new \ebussola\job\console\DaemonCommand()
 ));
 
 $cli->run();
