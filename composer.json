@@ -19,7 +19,7 @@
         "symfony/console": "v2.3.7",
         "symfony/process": "v2.3.7",
         "monolog/monolog": "1.7.0",
-        "symfony/monolog-bridge": "v2.4.0-BETA2",
+        "symfony/monolog-bridge": "v2.4.0",
         "symfony/event-dispatcher": "v2.3.7"
     },
     "require-dev": {
