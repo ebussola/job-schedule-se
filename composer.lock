@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "274c45a1fa50ed6b5e74294577ab371c",
+    "hash": "58e4c659294a071b4dbf36b9f35bb6cf",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -508,26 +508,32 @@
         },
         {
             "name": "ebussola/job-schedule",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/job-schedule.git",
-                "reference": "bb143d6abd08da88e18b3cc317af6d191bb8781e"
+                "reference": "172b82e842db23554cd07400412ab683b3056815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/job-schedule/zipball/bb143d6abd08da88e18b3cc317af6d191bb8781e",
-                "reference": "bb143d6abd08da88e18b3cc317af6d191bb8781e",
+                "url": "https://api.github.com/repos/ebussola/job-schedule/zipball/172b82e842db23554cd07400412ab683b3056815",
+                "reference": "172b82e842db23554cd07400412ab683b3056815",
                 "shasum": ""
             },
             "require": {
                 "ebussola/common-pool": "1.0.0",
+                "ext-zmq": ">=1.1.2",
                 "mtdowling/cron-expression": "v1.0.2",
-                "psr/log": "1.0.0"
+                "psr/log": "1.0.0",
+                "symfony/console": "v2.4.0"
             },
             "require-dev": {
+                "moriony/php-zmq-stubs": "dev-master",
                 "phpunit/phpunit": "3.7.28"
             },
+            "bin": [
+                "bin/job-schedule"
+            ],
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -542,7 +548,7 @@
                 }
             ],
             "description": "A daemon job schedule",
-            "time": "2013-11-23 21:23:49"
+            "time": "2013-12-26 00:14:01"
         },
         {
             "name": "monolog/monolog",
@@ -692,17 +698,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.3.7",
+            "version": "v2.4.0",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "00848d3e13cf512e77c7498c2b3b0192f61f4b18"
+                "reference": "3c1496ae96d24ccc6c340fcc25f71d7a1ab4c12c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/00848d3e13cf512e77c7498c2b3b0192f61f4b18",
-                "reference": "00848d3e13cf512e77c7498c2b3b0192f61f4b18",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/3c1496ae96d24ccc6c340fcc25f71d7a1ab4c12c",
+                "reference": "3c1496ae96d24ccc6c340fcc25f71d7a1ab4c12c",
                 "shasum": ""
             },
             "require": {
@@ -717,7 +723,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -741,7 +747,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-13 21:27:40"
+            "time": "2013-11-27 09:10:40"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -857,17 +863,17 @@
         },
         {
             "name": "symfony/process",
-            "version": "v2.3.7",
+            "version": "v2.4.0",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "82898108f79040314a7b3ba430a72c32c7f61d14"
+                "reference": "87738ff42e2467730ed74d941866e95513844b70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/82898108f79040314a7b3ba430a72c32c7f61d14",
-                "reference": "82898108f79040314a7b3ba430a72c32c7f61d14",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/87738ff42e2467730ed74d941866e95513844b70",
+                "reference": "87738ff42e2467730ed74d941866e95513844b70",
                 "shasum": ""
             },
             "require": {
@@ -876,7 +882,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -900,7 +906,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-30 08:30:20"
+            "time": "2013-11-26 16:40:27"
         }
     ],
     "packages-dev": [

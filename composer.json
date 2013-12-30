@@ -14,10 +14,10 @@
         }
     },
     "require": {
-        "ebussola/job-schedule": "1.0.2",
+        "ebussola/job-schedule": "1.1.*",
         "doctrine/dbal": "v2.4.1",
-        "symfony/console": "v2.3.7",
-        "symfony/process": "v2.3.7",
+        "symfony/console": "v2.4.0",
+        "symfony/process": "v2.4.0",
         "monolog/monolog": "1.7.0",
         "symfony/monolog-bridge": "v2.4.0",
         "symfony/event-dispatcher": "v2.3.7"

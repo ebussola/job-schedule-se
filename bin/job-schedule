@@ -20,7 +20,9 @@ $cli = new \Symfony\Component\Console\Application();
 $cli->setHelperSet($helperSet);
 $cli->addCommands(array(
     new \ebussola\job\console\InitCommand(),
-    new \ebussola\job\console\DaemonCommand()
+    new \ebussola\job\console\DaemonCommand(),
+    new \ebussola\job\console\RefreshJobsCommand(),
+    new \ebussola\job\console\ListJobsCommand()
 ));
 
 $cli->run();
