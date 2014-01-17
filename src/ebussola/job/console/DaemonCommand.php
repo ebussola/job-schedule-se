@@ -8,16 +8,14 @@
 
 namespace ebussola\job\console;
 
-
-use Doctrine\DBAL\DriverManager;
 use ebussola\job\Daemon;
 use ebussola\job\jobdata\Doctrine;
 use ebussola\job\Schedule;
 use Monolog\Logger;
 use Symfony\Bridge\Monolog\Handler\ConsoleHandler;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class DaemonCommand extends Command {
@@ -26,13 +24,13 @@ class DaemonCommand extends Command {
         $this
             ->setName('jobschedule:start')
             ->setDescription('Starts the daemon process')
-            ->addOption('db-config', 'c', InputOption::VALUE_REQUIRED, 'db-config.php file');
+            ->addArgument('table_name', InputArgument::REQUIRED, 'Table Name');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output) {
-        $config = include $input->getOption('db-config');
-        $conn = DriverManager::getConnection($config['database']);
-        $data = new Doctrine($conn, $config['table_name']);
+        $table_name = $input->getArgument('table_name');
+        $conn = $this->getHelper('db')->getConnection();
+        $data = new Doctrine($conn, $table_name);
 
         $handler = new ConsoleHandler($output);
         $logger = new Logger('job-schedule');

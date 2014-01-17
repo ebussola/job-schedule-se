@@ -14,12 +14,13 @@
         }
     },
     "require": {
-        "ebussola/job-schedule": "1.1.*",
-        "doctrine/dbal": "v2.4.1",
-        "symfony/console": "v2.4.0",
-        "symfony/process": "v2.4.0",
-        "monolog/monolog": "1.7.0",
-        "symfony/monolog-bridge": "v2.4.0"
+        "ebussola/job-schedule": "~1.1",
+        "doctrine/dbal": "~2.4",
+        "symfony/console": "~2.4",
+        "symfony/process": "~2.4",
+        "monolog/monolog": "~1.7",
+        "symfony/monolog-bridge": "~2.4",
+        "symfony/event-dispatcher": "~2.4"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"

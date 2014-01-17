@@ -6,6 +6,5 @@ return array(
         'user'     => 'root',
         'password' => '',
         'memory' => true
-    ),
-    'table_name' => ''
+    )
 );
