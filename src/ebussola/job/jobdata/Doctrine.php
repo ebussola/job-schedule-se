@@ -36,12 +36,16 @@ class Doctrine implements JobData {
      * @return Job
      */
     public function find($command_id) {
+        $this->conn->connect();
+
         $stmt = $this->conn->query("select * from {$this->table_name} where id = :id");
         $stmt->bindValue(':id', $command_id, \PDO::PARAM_INT);
         $stmt->setFetchMode(\PDO::FETCH_CLASS, '\ebussola\job\job\Job');
         $stmt->execute();
 
         $job = $stmt->fetch();
+
+        $this->conn->close();
 
         return $job;
     }
@@ -50,11 +54,15 @@ class Doctrine implements JobData {
      * @return Job[]
      */
     public function getAll() {
+        $this->conn->connect();
+
         $stmt = $this->conn->query("select * from {$this->table_name}");
         $stmt->setFetchMode(\PDO::FETCH_CLASS, '\ebussola\job\job\Job');
         $stmt->execute();
 
         $jobs = $stmt->fetchAll();
+
+        $this->conn->close();
 
         return $jobs;
     }
